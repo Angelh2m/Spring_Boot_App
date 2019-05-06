@@ -24,10 +24,10 @@ public class UserController {
     //    UserDetailsRequestModel convert JSON into a JavaObject;
     @PostMapping
     public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails){
-
+        // This is what we are going to return
         UserRest returnValue = new UserRest();
+        // Create a new user
         UserDto userDto = new UserDto();
-
         // Serialize and copy the payload into a userDto
         BeanUtils.copyProperties(userDetails, userDto);
         // Save it in the DB
